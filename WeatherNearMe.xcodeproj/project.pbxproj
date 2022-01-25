@@ -383,7 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T7HHTKHFK5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeatherNearMe/Info.plist;
+				INFOPLIST_FILE = WeatherNearMe/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -411,7 +411,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T7HHTKHFK5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeatherNearMe/Info.plist;
+				INFOPLIST_FILE = WeatherNearMe/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
