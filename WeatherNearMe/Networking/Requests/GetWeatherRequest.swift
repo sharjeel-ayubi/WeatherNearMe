@@ -28,10 +28,10 @@ struct GetWeatherRequest : DataRequest {
 
 struct WeatherRequestDTO : Codable {
     
-    var lat: String
-    var lon: String
+    var lat: Double
+    var lon: Double
     
-    init(lat: String, long: String) {
+    init(lat: Double, long: Double) {
         self.lat = lat
         self.lon = long
     }
