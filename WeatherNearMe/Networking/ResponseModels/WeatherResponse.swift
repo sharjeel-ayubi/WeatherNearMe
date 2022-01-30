@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Weather: Codable {
-    var time: Int? { get }
+    var time: Double? { get }
     var summary: String? { get }
     var icon: String? { get }
     var precipIntensity: Float? { get }
@@ -35,7 +35,7 @@ class WeatherResponse: Codable {
 }
 
 class BasicWeatherData: Weather {
-    let time: Int?
+    let time: Double?
     let summary: String?
     let icon: String?
     let precipIntensity: Float?
@@ -55,7 +55,7 @@ class BasicWeatherData: Weather {
 }
 
 class WeatherDetail: Weather {
-    let time: Int?
+    let time: Double?
     let summary: String?
     let icon: String?
     let precipIntensity: Float?
