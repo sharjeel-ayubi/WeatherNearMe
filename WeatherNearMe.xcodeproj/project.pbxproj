@@ -33,6 +33,9 @@
 		539C261127A6C10A00F65DD1 /* DetailWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C260F27A6C10A00F65DD1 /* DetailWeatherCell.swift */; };
 		539C261227A6C10A00F65DD1 /* DetailWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 539C261027A6C10A00F65DD1 /* DetailWeatherCell.xib */; };
 		539C261427A7411500F65DD1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C261327A7411500F65DD1 /* Date+Extension.swift */; };
+		539C261A27A863BE00F65DD1 /* WeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C261927A863BE00F65DD1 /* WeatherDetailViewModel.swift */; };
+		539C261C27A863ED00F65DD1 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C261B27A863ED00F65DD1 /* WeatherDetailViewController.swift */; };
+		539C261E27A8BBD200F65DD1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C261D27A8BBD200F65DD1 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		539C260F27A6C10A00F65DD1 /* DetailWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherCell.swift; sourceTree = "<group>"; };
 		539C261027A6C10A00F65DD1 /* DetailWeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWeatherCell.xib; sourceTree = "<group>"; };
 		539C261327A7411500F65DD1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		539C261927A863BE00F65DD1 /* WeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewModel.swift; sourceTree = "<group>"; };
+		539C261B27A863ED00F65DD1 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		539C261D27A8BBD200F65DD1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +134,9 @@
 		539C25D5279E132B00F65DD1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				539C261627A8638100F65DD1 /* Storyboard */,
+				539C261527A8637700F65DD1 /* WeatherDetail */,
 				539C25FA27A48D0500F65DD1 /* Main */,
-				539C25F927A48C5F00F65DD1 /* HourlyWeather */,
-				539C25F827A48C5400F65DD1 /* DailyWeather */,
-				539C25F527A48B3700F65DD1 /* CurrentWeather */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				539C25D8279E1B6C00F65DD1 /* Extensions */,
 				539C25F327A3596F00F65DD1 /* Enums.swift */,
 				539C25FD27A497EC00F65DD1 /* Observable.swift */,
+				539C261D27A8BBD200F65DD1 /* Utilities.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -200,43 +206,6 @@
 			path = LocationServices;
 			sourceTree = "<group>";
 		};
-		539C25F527A48B3700F65DD1 /* CurrentWeather */ = {
-			isa = PBXGroup;
-			children = (
-				539C25F727A48B4F00F65DD1 /* ViewModel */,
-				539C25F627A48B4600F65DD1 /* View */,
-			);
-			path = CurrentWeather;
-			sourceTree = "<group>";
-		};
-		539C25F627A48B4600F65DD1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		539C25F727A48B4F00F65DD1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		539C25F827A48C5400F65DD1 /* DailyWeather */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DailyWeather;
-			sourceTree = "<group>";
-		};
-		539C25F927A48C5F00F65DD1 /* HourlyWeather */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HourlyWeather;
-			sourceTree = "<group>";
-		};
 		539C25FA27A48D0500F65DD1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				539C25FF27A5DEDC00F65DD1 /* Cell */,
-				539C25C5279E12D400F65DD1 /* Main.storyboard */,
 				539C25C3279E12D400F65DD1 /* MainViewController.swift */,
 			);
 			path = View;
@@ -301,6 +269,39 @@
 				539C261027A6C10A00F65DD1 /* DetailWeatherCell.xib */,
 			);
 			path = DetailWeatherCell;
+			sourceTree = "<group>";
+		};
+		539C261527A8637700F65DD1 /* WeatherDetail */ = {
+			isa = PBXGroup;
+			children = (
+				539C261827A8639500F65DD1 /* ViewModel */,
+				539C261727A8638A00F65DD1 /* View */,
+			);
+			path = WeatherDetail;
+			sourceTree = "<group>";
+		};
+		539C261627A8638100F65DD1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				539C25C5279E12D400F65DD1 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		539C261727A8638A00F65DD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				539C261B27A863ED00F65DD1 /* WeatherDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		539C261827A8639500F65DD1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				539C261927A863BE00F65DD1 /* WeatherDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,8 +383,11 @@
 				539C25E6279E1D6100F65DD1 /* GetWeatherRequest.swift in Sources */,
 				539C25DE279E1BE100F65DD1 /* CustomErrors.swift in Sources */,
 				539C25C4279E12D400F65DD1 /* MainViewController.swift in Sources */,
+				539C261E27A8BBD200F65DD1 /* Utilities.swift in Sources */,
+				539C261C27A863ED00F65DD1 /* WeatherDetailViewController.swift in Sources */,
 				539C25C0279E12D400F65DD1 /* AppDelegate.swift in Sources */,
 				539C25C2279E12D400F65DD1 /* SceneDelegate.swift in Sources */,
+				539C261A27A863BE00F65DD1 /* WeatherDetailViewModel.swift in Sources */,
 				539C25F427A3596F00F65DD1 /* Enums.swift in Sources */,
 				539C260927A6B7F300F65DD1 /* BaseCellViewModel.swift in Sources */,
 				539C260727A5F09900F65DD1 /* SimpleWeatherCellViewModel.swift in Sources */,
@@ -562,7 +566,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayubi.WeatherNearMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayubi.test.WeatherNearMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -594,7 +598,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayubi.WeatherNearMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayubi.test.WeatherNearMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

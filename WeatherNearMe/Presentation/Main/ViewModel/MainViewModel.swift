@@ -47,11 +47,6 @@ class MainViewModel {
             let simpleWeatherCellVM = SimpleWeatherCellViewModel(data: weatherData)
             return simpleWeatherCellVM as BaseCellViewModel
             
-        case .daily:
-            guard let weatherData = weatherData.value?.daily?.data?[indexPath.row]
-                else { return nil }
-            let detailWeatherCellVM = DetailWeatherCellViewModel(data: weatherData)
-            return  detailWeatherCellVM as BaseCellViewModel
         }
     }
     
@@ -61,8 +56,6 @@ class MainViewModel {
             return 1
         case .hourly:
             return weatherData.value?.hourly?.data?.count
-        case .daily:
-            return weatherData.value?.daily?.data?.count
         }
     }
     
@@ -74,6 +67,15 @@ class MainViewModel {
             return DetailWeatherCell.identifier
         default:
             return nil
+        }
+    }
+    
+    func getWeatherData(for indexPath: IndexPath) -> BasicWeatherData? {
+        switch selectedWeatherType.value {
+        case .current:
+            return weatherData.value?.currently
+        case .hourly:
+            return weatherData.value?.hourly?.data?[indexPath.row]
         }
     }
 }

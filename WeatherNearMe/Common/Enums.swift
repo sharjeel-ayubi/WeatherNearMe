@@ -9,6 +9,5 @@ import Foundation
 
 enum WeatherType: Int {
     case current = 0
-    case daily
     case hourly
 }

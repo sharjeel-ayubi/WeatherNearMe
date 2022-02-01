@@ -18,20 +18,8 @@ class SimpleWeatherCellViewModel: BaseCellViewModel {
         return "\(Int((basicWeatherData.precipProbability ?? 0.0) * 100.0))%"
     }
     
-    func getHoursTime() -> String {
-        let date = getDateFromTimestamp()
-        let localTime = date.UTCtoLocalDateStr(in: "hh a")
-        return localTime
-    }
-    
-    func getMonthDate() -> String {
-        let date = getDateFromTimestamp()
-        let localTime = date.UTCtoLocalDateStr(in: "dd/MM")
-        return localTime
-    }
-    
-    private func getDateFromTimestamp() -> Date {
-        return Date(timeIntervalSince1970: basicWeatherData.time ?? 0.0)
+    func getStringDate(with format: String) -> String {
+        return Utilities.shared.getStringDate(from: basicWeatherData.time ?? 0.0, with: format)
     }
     
 }

@@ -94,6 +94,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "WeatherDetailViewController") as! WeatherDetailViewController
+        guard let weatherData = viewModel?.getWeatherData(for: indexPath) else { return }
+        detailVC.viewModel = WeatherDetailViewModel(data: weatherData)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

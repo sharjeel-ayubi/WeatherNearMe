@@ -33,8 +33,8 @@ class SimpleWeatherCell: UITableViewCell, BaseWeatherCell {
     func bindView(with viewModel: BaseCellViewModel) {
         guard let simpleWeatherViewModel = viewModel as? SimpleWeatherCellViewModel else {return}
         let weatherData = simpleWeatherViewModel.basicWeatherData
-        lblTime.text = simpleWeatherViewModel.getHoursTime()
-        lblDate.text = simpleWeatherViewModel.getMonthDate()
+        lblTime.text = simpleWeatherViewModel.getStringDate(with: "hh a")
+        lblDate.text = simpleWeatherViewModel.getStringDate(with: "dd/MM")
         weatherIcon.image = UIImage(named: weatherData.icon ?? "clear-day")
         lblTemperature.text = "\(Int(weatherData.temperature ?? 0.0))°"
         lblFeelTemperature.text = "RealFeel \(Int(weatherData.apparentTemperature ?? 0.0))°"
